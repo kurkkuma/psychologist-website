@@ -1,0 +1,153 @@
+@import url("reset.css");
+
+@font-face {
+  font-family: "Vogue";
+  src: url("fonts/Vogue.ttf");
+}
+@font-face {
+  font-family: "Gowun";
+  src: url("fonts/GowunDodum-Regular.ttf");
+}
+
+:root {
+  --light-pink: #fbd1d5ff;
+  --dark-pink: rgb(215, 133, 148);
+  --yellow: #ecce9fff;
+  --green: rgb(45, 44, 27);
+  background-color: var(--dark-pink);
+  font-size: 16px;
+  font-family: "Gowun";
+  font-weight: 500;
+  color: var(--green);
+}
+
+.main-container {
+  border: 1px solid rgb(106, 255, 0);
+  width: 100%;
+}
+
+/* about  */
+.about-container {
+  border: 1px solid rgb(0, 183, 255);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* navbar  */
+.navbar {
+  background-color: var(--light-pink);
+  width: 100%;
+  height: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  margin-bottom: 1rem;
+}
+.menu {
+  width: 2rem;
+  display: none;
+  cursor: pointer;
+}
+nav ul {
+  display: flex;
+  gap: 1rem;
+}
+.navbar p,
+li {
+  cursor: pointer;
+}
+.about-info-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+}
+picture img {
+  border-radius: 100%;
+  width: 90%;
+  margin: 0 auto 1rem auto;
+}
+.info {
+  text-align: center;
+}
+.info h1 {
+  font-family: "Vogue";
+  letter-spacing: 0.2rem;
+  line-height: 2rem;
+  margin-bottom: 1rem;
+}
+.info p {
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+/* media */
+
+@media (max-width: 768px) {
+  .menu {
+    display: block;
+  }
+  .navbar {
+    padding: 0 1rem;
+  }
+  nav ul {
+    display: none;
+  }
+}
+@media (min-width: 425px) {
+  picture img {
+    width: 70%;
+  }
+}
+@media (min-width: 600px) {
+  .about-info-container {
+    width: 90%;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem;
+  }
+  .info {
+    flex-basis: 50%;
+  }
+  picture {
+    width: auto;
+    flex-basis: 50%;
+  }
+  picture img {
+    width: 90%;
+    margin: 0;
+  }
+}
+@media (min-width: 768px) {
+  :root {
+    font-size: 18px;
+  }
+}
+@media (min-width: 1024px) {
+  :root {
+    font-size: 18px;
+  }
+}
+@media (min-width: 1165px) {
+  .info {
+    flex-basis: 40%;
+  }
+  picture {
+    flex-basis: 45%;
+  }
+}
+@media (min-width: 1500px) {
+  :root {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 2000px) {
+  :root {
+    font-size: 32px;
+  }
+}

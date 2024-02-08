@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Personal website of psychologist Scarlett Lonadi"
+    />
+    <!-- <meta property="og:image" content="static/" /> -->
+    <meta property="og:title" content="Scarlett Lonadi" />
+    <meta
+      property="og:description"
+      content="Personal website of psychologist Scarlett Lonadi"
+    />
+    <meta property="og:url" content="https://scarlett-lonadi.netlify.app/" />
+    <meta property="og:type" content="website" />
+    <link rel="shortcut icon" href="static/flower.png" type="image/x-icon" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scarlett Lonadi</title>
+  </head>
+  <body>
+    <div class="main-container">
+      <!-- about  -->
+      <div class="about-container">
+        <div class="navbar">
+          <nav>
+            <img class="menu" src="static/menu.png" alt="burger menu icon" />
+            <ul>
+              <li>Home</li>
+              <li>About me</li>
+              <li>Services</li>
+              <li>Reviews</li>
+              <li>Contacts</li>
+            </ul>
+          </nav>
+          <p>Contact with me</p>
+        </div>
+        <div class="about-info-container">
+          <picture>
+            <source
+              srcset="static/main-photo-m.jpg"
+              media="(max-width: 768px)"
+            />
+
+            <source
+              srcset="static/main-photo-l.jpg"
+              media="(min-width: 768px)"
+            />
+            <img src="static/main-photo-m.jpg" alt="main photo" />
+          </picture>
+          <div class="info">
+            <h1>Scarlett Lonadi</h1>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore,
+              aspernatur?
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum,
+              ipsum! Quas quis, omnis animi hic, mollitia possimus voluptatum
+              exercitationem sapiente sunt temporibus rerum, aliquam alias.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
