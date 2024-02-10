@@ -132,31 +132,3 @@ const tick = () => {
 };
 
 tick();
-
-function isElementInViewport(el) {
-  const rect = el.getBoundingClientRect();
-  return (
-    rect.top >= 0 &&
-    rect.left >= 0 &&
-    rect.bottom <=
-      (window.innerHeight || document.documentElement.clientHeight) &&
-    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-  );
-}
-
-const mainDiv = document.querySelector(".main-part");
-const decorateDivs = document.querySelectorAll(".decorate-div");
-
-function animateIfVisible() {
-  if (
-    isElementInViewport(mainDiv.querySelector("h1")) ||
-    isElementInViewport(mainDiv) ||
-    isElementInViewport(decorateDivs[0]) ||
-    isElementInViewport(decorateDivs[1])
-  ) {
-    mainDiv.style.animation = "appear 1s ease-in-out both";
-  }
-}
-
-document.addEventListener("DOMContentLoaded", animateIfVisible);
-window.addEventListener("scroll", animateIfVisible);
