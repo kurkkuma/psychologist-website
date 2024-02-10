@@ -133,10 +133,6 @@ const tick = () => {
 
 tick();
 
-const mainDiv = document.querySelector(".main-part");
-const servicesDiv = document.querySelector(".services-container");
-const decorateDivs = document.querySelectorAll(".decorate-div");
-
 function isElementInViewport(el) {
   const rect = el.getBoundingClientRect();
   return (
@@ -148,24 +144,18 @@ function isElementInViewport(el) {
   );
 }
 
-function applyAnimationIfVisible(element, childElements) {
-  if (
-    isElementInViewport(element) ||
-    childElements.some((child) => isElementInViewport(child))
-  ) {
-    element.style.animation = "appear 1s ease-in-out both";
-  }
-}
+const mainDiv = document.querySelector(".main-part");
+const decorateDivs = document.querySelectorAll(".decorate-div");
 
 function animateIfVisible() {
-  applyAnimationIfVisible(mainDiv, [
-    mainDiv.querySelector("h1"),
-    ...decorateDivs,
-  ]);
-  applyAnimationIfVisible(servicesDiv, [
-    servicesDiv.querySelector("h1"),
-    ...decorateDivs,
-  ]);
+  if (
+    isElementInViewport(mainDiv.querySelector("h1")) ||
+    isElementInViewport(mainDiv) ||
+    isElementInViewport(decorateDivs[0]) ||
+    isElementInViewport(decorateDivs[1])
+  ) {
+    mainDiv.style.animation = "appear 1s ease-in-out both";
+  }
 }
 
 document.addEventListener("DOMContentLoaded", animateIfVisible);

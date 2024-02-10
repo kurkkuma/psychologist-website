@@ -161,7 +161,6 @@ svg {
 
 /* services  */
 .services-container {
-  opacity: 0;
   width: 100%;
   padding: 1rem;
   max-width: 620px;
