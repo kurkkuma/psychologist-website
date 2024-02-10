@@ -10,15 +10,22 @@
 }
 
 :root {
-  --light-pink: #fbd1d5ff;
+  --light-pink: #fbd1d5;
   --dark-pink: #e19ba8;
   --yellow: #ecce9f;
-  --green: #2d2c1b;
+  --grey: #444443;
+  --white: #ffffff;
+
   background-color: var(--dark-pink);
   font-size: 16px;
   font-family: "Gowun";
   font-weight: 500;
-  color: var(--green);
+  color: var(--white);
+}
+
+h1,
+h3 {
+  color: var(--grey);
 }
 
 .main-container {
@@ -37,7 +44,11 @@
 }
 /* navbar  */
 .navbar {
-  background-color: var(--light-pink);
+  background: linear-gradient(
+    to right,
+    var(--light-pink) 0%,
+    var(--dark-pink) 100%
+  );
   width: 100%;
   height: 2rem;
   display: flex;
@@ -45,6 +56,7 @@
   align-items: center;
   padding: 0 2rem;
   margin-bottom: 1rem;
+  color: var(--grey);
 }
 .menu {
   width: 2rem;
@@ -60,11 +72,13 @@ li {
   cursor: pointer;
 }
 .about-info-container {
+  animation: appear 1s ease-in-out both;
+
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1.5rem;
+  padding: 1rem;
   margin-bottom: 2rem;
 }
 picture img {
@@ -86,16 +100,23 @@ picture img {
   margin-bottom: 1rem;
 }
 .decorate-div {
-  background-color: var(--light-pink);
+  /* background-color: var(--light-pink); */
   width: 100%;
   height: 2rem;
   margin-bottom: 2rem;
+  background: linear-gradient(
+    to right,
+    var(--light-pink) 0%,
+    var(--dark-pink) 100%
+  );
 }
-
+.decorate-div:last-child {
+  margin-bottom: 0;
+}
 /* main part  */
 .main-part {
-  border: 2px solid red;
-  margin-bottom: 1rem;
+  opacity: 0;
+  margin-bottom: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -114,10 +135,10 @@ picture img {
 svg {
   width: 17rem;
   height: 17rem;
+  user-select: none;
 }
 .circle {
   position: relative;
-  border: 1px solid rgb(51, 255, 0);
 }
 .canvas-container {
   z-index: -10;
@@ -126,10 +147,40 @@ svg {
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: transparent;
-  border: 1px solid blue;
-  width: 70%;
-  height: 70%;
+  width: 100%;
+  height: 100%;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.canvas-container img {
+  width: 60%;
+  height: 60%;
+}
+
+/* services  */
+.services-container {
+  opacity: 0;
+  width: 100%;
+  padding: 1rem;
+  max-width: 620px;
+  margin-bottom: 4rem;
+}
+.services-container h1 {
+  font-family: "Vogue";
+  font-size: 1.5rem;
+  letter-spacing: 0.2rem;
+  line-height: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.services-container h3 {
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+}
+.services-container p {
+  margin-bottom: 1rem;
 }
 
 /* media */
@@ -147,6 +198,9 @@ svg {
 @media (min-width: 425px) {
   picture img {
     width: 70%;
+  }
+  .services-container {
+    padding: 2rem;
   }
 }
 @media (min-width: 600px) {
@@ -197,6 +251,9 @@ svg {
   picture {
     flex-basis: 45%;
   }
+  .services-container {
+    max-width: 900px;
+  }
 }
 @media (min-width: 1500px) {
   :root {
@@ -210,12 +267,23 @@ svg {
     height: 28rem;
   }
 }
-
 @media (min-width: 2000px) {
   :root {
     font-size: 32px;
   }
   .main-part {
     max-width: 1400px;
+  }
+  .services-container {
+    max-width: 1200px;
+  }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
